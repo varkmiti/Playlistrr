@@ -16,7 +16,16 @@ def album_search_by_artist_name(artist_name)
 end 
 
 def songs_by_album(album)
-    puts RSpotify::Artist.search("#{album}").map { |art| art.name } 
+    puts RSpotify::Album.search("#{album}").map { |art| art.name } 
+
+    puts "\n"
+    puts "Which '#{album}'? If there are multiple albums with the same name, your search will return the most popular album with that name."
+
+    real_name = gets.chomp
+    most_pop =  RSpotify::Album.search("#{real_name}").map { |art| art.popularity }.max {|art1, art2| art1 <=> art2 }
+    art_name = RSpotify::Album.search("#{real_name}").filter { |art| art.popularity == most_pop }[0].name
+    puts RSpotify::Album.search("#{art_name}")[0].tracks.map { |alb| alb.name }.uniq
+
 
 
 end 
@@ -24,9 +33,11 @@ end
 puts "What album would you like to search for?"
 # puts "What artist would you like to search for?"
 
-# name = gets.chomp
+name = gets.chomp
 
 # album_search_by_artist_name(name)
+
+songs_by_album(name)
 
 
 puts "\n"
