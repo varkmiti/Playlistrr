@@ -1,4 +1,4 @@
-def album_search_by_artist_name(artist_name)
+def album_search_by_artist_name(artist_name) # Need to switch order of request and printout of artists 
     if RSpotify::Artist.search("#{artist_name}").map { |art| art.name }.include?(artist_name) == false
         puts RSpotify::Artist.search("#{artist_name}").map { |art| art.name }.uniq.first(5)
 
@@ -17,5 +17,5 @@ def album_search_by_artist_name(artist_name)
         most_pop =  RSpotify::Artist.search("#{artist_name}").map { |art| art.popularity }.max {|art1, art2| art1 <=> art2 }
         art_name = RSpotify::Artist.search("#{artist_name}").filter { |art| art.popularity == most_pop }[0].name
         puts RSpotify::Artist.search("#{art_name}")[0].albums.map { |alb| alb.name }.uniq
-    end  
+    end 
 end 

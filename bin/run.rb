@@ -5,6 +5,9 @@ RSpotify.authenticate("18b7df05eba6475fa7cf513a461d6f60", "9658c23b6b614f70af47f
 puts "Welcome to Playlistrr! What would you like to search for?"
 puts "1. Artists"
 puts "2. Albums"
+puts "3. Songs" #yet to be built out 
+puts "4. Popularity" #yet to be built out 
+puts "5. Find New Music" #yet to be built out 
 
 choice = gets.chomp
 
