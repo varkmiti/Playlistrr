@@ -79,7 +79,7 @@ GEM
       activerecord (>= 3.2)
       sinatra (>= 1.0)
     slop (3.6.0)
-    sqlite3 (1.4.2)
+    sqlite3 (1.3.13)
     thread_safe (0.3.6)
     tilt (2.0.10)
     tzinfo (1.2.9)
@@ -99,7 +99,7 @@ DEPENDENCIES
   require_all
   rspotify
   sinatra-activerecord
-  sqlite3 (~> 1.4)
+  sqlite3 (~> 1.3.6)
 
 BUNDLED WITH
    1.16.1
