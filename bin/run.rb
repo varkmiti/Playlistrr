@@ -46,20 +46,20 @@ def welcome_and_options
         puts "\n"
         search_song(song_name)
 
+    elsif choice == "Popular" or choice == "popular" or choice == "4"
+        puts "yeah im working on it"
+
     elsif choice == "new music" or choice == "Find new" or choice == "5" or choice == "Find New Music" or choice == "Find new music" or choice == "find new music"
         puts "What would you like to see?"
         puts "1. New Albums"
-        puts "2. New Artists"
-        puts "3. New for You "
+        puts "2. New for You "
         puts "\n"
         choice1 = gets.chomp 
         puts "\n"
         if choice1 == "1" or choice1 == "New Albums" or choice1 == "New albums" or choice1 == "new albums"
             new_albums
-        elsif choice1 == "2" or choice1 == "New Artists" or choice1 == "new artists" or choice1 == "New arists"
-            puts "yeah i'm working on it"
-        elsif choice1 == "3" or choice1 == "New for You" or choice1 == "new for you" or choice1 == "New for you"
-            puts "yeah i'm working on it"
+        elsif choice1 == "2" or choice1 == "New for You" or choice1 == "new for you" or choice1 == "New for you"
+            new_for_you
         end
 
     elsif choice == "6" or choice == "create user" or choice == "Create User" or choice == "Create user"
