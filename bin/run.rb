@@ -16,7 +16,7 @@ def welcome_and_options
     puts "1. Artists"
     puts "2. Albums"
     puts "3. Songs" 
-    puts "4. Popular" 
+    puts "4. Popular" # Needs fixing 
     puts "5. Find New Music" 
     puts "6. Create User" 
     puts "7. Create Playlist"
@@ -47,7 +47,7 @@ def welcome_and_options
         search_song(song_name)
 
     elsif choice == "Popular" or choice == "popular" or choice == "4"
-        puts "yeah im working on it"
+        most_popular_artists
 
     elsif choice == "new music" or choice == "Find new" or choice == "5" or choice == "Find New Music" or choice == "Find new music" or choice == "find new music"
         puts "What would you like to see?"
