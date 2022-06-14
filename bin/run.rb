@@ -7,7 +7,7 @@ def welcome_and_options
     puts "1. Artists"
     puts "2. Albums"
     puts "3. Songs" 
-    puts "4. Popula" #yet to be built out 
+    puts "4. Popular" 
     puts "5. Find New Music" #yet to be built out 
     puts "6. Quit Playlistrr"
     puts "\n"
@@ -33,6 +33,16 @@ def welcome_and_options
         song_name = gets.chomp
         puts "\n"
         search_song(song_name)
+
+    elsif choice == "Popular" or choice == "popular" or choice == "4"
+        puts "What would you like to see?"
+        puts "1. New Albums"
+        puts "\n"
+        choice1 = gets.chomp 
+        puts "\n"
+        if choice1 == "1" or choice1 == "New Albums" or choice1 == "New albums" or choice1 == "new albums"
+            new_albums
+        end  
 
     elsif choice == "6" or choice == "Quit" or choice == "quit"
         puts "\n"
