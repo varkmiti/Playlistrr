@@ -63,9 +63,14 @@ def welcome_and_options
         end
 
     elsif choice == "6" or choice == "create user" or choice == "Create User" or choice == "Create user"
-        puts "yeah i'm working on it"
+        puts "\n"
+        puts "What's your name?"
+        puts "\n"
+        name = gets.chomp
+        create_new_user(name)
 
     elsif choice == "7" or choice == "Create Playlist" or choice == "create playlist" or choice1 == "Create playlist"
+        
         puts "yeah i'm working on it"
 
     elsif choice == "8" or choice == "Create party" or choice == "Create Party" or choice == "create party"
