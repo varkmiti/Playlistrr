@@ -15,7 +15,6 @@ def controls
     puts "1. Artists"
     puts "2. Albums"
     puts "3. Songs" 
-    puts "4. Popular" # Needs fixing 
     puts "5. Find New Music" 
     puts "7. Create Playlist"
     puts "8. Create Party"
@@ -52,9 +51,6 @@ def controls
             add_song(song_name)
         end 
 
-    elsif choice == "Popular" or choice == "popular" or choice == "4"
-        most_popular_artists
-
     elsif choice == "new music" or choice == "Find new" or choice == "5" or choice == "Find New Music" or choice == "Find new music" or choice == "find new music"
         puts "What would you like to see?"
         puts "1. New Albums"
@@ -69,9 +65,7 @@ def controls
         end
 
     elsif choice == "7" or choice == "Create Playlist" or choice == "create playlist" or choice1 == "Create playlist"
-        
-        puts "yeah i'm working on it"
-
+        create_playlist
     elsif choice == "8" or choice == "Create party" or choice == "Create Party" or choice == "create party"
         puts "yeah i'm working on it"
     
