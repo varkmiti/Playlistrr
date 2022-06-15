@@ -17,7 +17,6 @@ def controls
     puts "3. Songs" 
     puts "4. Popular" # Needs fixing 
     puts "5. Find New Music" 
-    puts "6. Create User" 
     puts "7. Create Playlist"
     puts "8. Create Party"
     puts "9. Quit Playlistrr"
@@ -44,6 +43,14 @@ def controls
         song_name = gets.chomp
         puts "\n"
         search_song(song_name)
+        puts "\n"
+        puts "Would you like to add the top result?"
+        puts "\n"
+        choice2 = gets.chomp
+        puts "\n"
+        if choice2 == "yes" or choice2 == "add song"
+            add_song(song_name)
+        end 
 
     elsif choice == "Popular" or choice == "popular" or choice == "4"
         most_popular_artists
@@ -60,9 +67,6 @@ def controls
         elsif choice1 == "2" or choice1 == "New for You" or choice1 == "new for you" or choice1 == "New for you"
             new_for_you
         end
-
-    elsif choice == "6" or choice == "create user" or choice == "Create User" or choice == "Create user"
-        sign_in
 
     elsif choice == "7" or choice == "Create Playlist" or choice == "create playlist" or choice1 == "Create playlist"
         
