@@ -10,13 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 5) do
+ActiveRecord::Schema.define(version: 6) do
 
   create_table "artists", force: :cascade do |t|
     t.string "name"
   end
 
   create_table "genres", force: :cascade do |t|
+    t.string "name"
+  end
+
+  create_table "parties", force: :cascade do |t|
     t.string "name"
   end
 
