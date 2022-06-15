@@ -9,10 +9,9 @@ def terminate
     exit(true)
 end 
 
-
-def welcome_and_options
+def controls
     puts "\n"
-    puts "Welcome to Playlistrr! What would you like to search for?"
+    puts "What would you like to search for, #{@session_user.name}?"
     puts "1. Artists"
     puts "2. Albums"
     puts "3. Songs" 
@@ -63,11 +62,7 @@ def welcome_and_options
         end
 
     elsif choice == "6" or choice == "create user" or choice == "Create User" or choice == "Create user"
-        puts "\n"
-        puts "What's your name?"
-        puts "\n"
-        name = gets.chomp
-        create_new_user(name)
+        sign_in
 
     elsif choice == "7" or choice == "Create Playlist" or choice == "create playlist" or choice1 == "Create playlist"
         
@@ -80,7 +75,7 @@ def welcome_and_options
         terminate
     else 
         puts "Sorry, looks like we can't find #{choice} for you. Let's try a different search:"
-        welcome_and_options 
+        select 
     end 
      
     puts "\n"
@@ -92,10 +87,12 @@ def welcome_and_options
     return_or_exit = gets.chomp
 
     if return_or_exit == "1" or return_or_exit == "yes" or return_or_exit == "Yes"
-        welcome_and_options
+        controls
     elsif return_or_exit == "2" or return_or_exit == "no" or return_or_exit == "No"
         terminate
     end 
 end 
 
-welcome_and_options
+
+sign_in
+controls

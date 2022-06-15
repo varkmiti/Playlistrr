@@ -1,6 +1,6 @@
 def songs_by_album(album)
     if RSpotify::Album.search("#{album}").map { |art| art.name }.count != 1
-        puts RSpotify::Album.search("#{album}").flat_map { |art| [art.name, art.artists[0].name].join(" | ") }.uniq.first(5)
+        puts RSpotify::Album.search("#{album}").map { |track| [track.name, track.artists.map {|artist| artist.name}.join(", ")].join(" | ") }.uniq.first(5)
         
         puts "\n"
         puts "Which '#{album}'? If there are multiple albums with the same name, your search will return the most popular album with that name."

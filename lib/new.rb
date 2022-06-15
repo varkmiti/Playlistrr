@@ -4,7 +4,7 @@
 #popular albums
 
 def new_albums
-   puts  RSpotify::Album.new_releases.flat_map { |art| [art.name, art.artists[0].name].join(" | ") }.first(5)
+   puts  RSpotify::Album.new_releases.map { |track| [track.name, track.artists.map {|artist| artist.name}.join(", ")].join(" | ") }
 end 
 
 def new_for_you
@@ -25,4 +25,4 @@ end
 # Ex: [{name:"str", artists:[<artist>, <artists>]}]
 def recommendations(gen1, gen2)
    RSpotify::Recommendations.generate(seed_genres: ["#{gen1}", "#{gen2}"]).tracks
-end
+end 
