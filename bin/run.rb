@@ -66,7 +66,7 @@ def controls
 
     elsif choice == "7" or choice == "Create Playlist" or choice == "create playlist" or choice1 == "Create playlist"
         create_playlist
-        
+
     elsif choice == "8" or choice == "Create party" or choice == "Create Party" or choice == "create party"
         puts "yeah i'm working on it"
     

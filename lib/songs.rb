@@ -6,5 +6,7 @@ def add_song(song_name)
     Song.find_or_create_by(
         name: song_name, user_id: @session_user.id, 
         ob_id: RSpotify::Track.search("#{song_name}")[0].id,
-        artist_id: RSpotify::Track.search("#{song_name}")[0].artists[0].id)
+        artist_id: RSpotify::Track.search("#{song_name}")[0].artists[0].id, 
+        playist_id: @session_playlist.id)
 end 
+
