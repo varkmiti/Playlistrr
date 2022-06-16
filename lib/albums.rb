@@ -16,3 +16,9 @@ def songs_by_album(album)
         puts RSpotify::Album.search("#{album}")[0].tracks.map { |alb| alb.name }.uniq
     end 
 end 
+
+def all_user_albums
+    puts "\n"
+    array = @session_user.songs.map { |song| song.ob_id }.uniq.to_a
+    
+end 

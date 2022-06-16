@@ -53,6 +53,24 @@ def controls
         album_name = gets.chomp
         puts "\n"
         songs_by_album(album_name)
+        puts "\n"
+        puts "Type the name of the song you would like to add, or you can type EXIT to return to search options."
+        puts "\n"
+        song_name = gets.chomp
+        puts "\n"
+        if song_name == "EXIT"
+            controls
+        else 
+            search_song(song_name)
+            puts "\n"
+            puts "Would you like to add the top result?"
+            puts "\n"
+            choice2 = gets.chomp
+            puts "\n"
+            if choice2 == "yes" or choice2 == "add song"
+                add_song(song_name)
+            end 
+        end 
 
     elsif choice == "Songs" or choice == "songs" or choice == "3"
         puts "What song would you like to search for?"
@@ -78,6 +96,34 @@ def controls
         puts "\n"
         if choice1 == "1" or choice1 == "New Albums" or choice1 == "New albums" or choice1 == "new albums"
             new_albums
+            puts "\n"
+            puts "What album would you like to open? If none, type EXIT."
+            puts "\n"
+            album_name = gets.chomp
+            puts "\n"
+            if album_name == "EXIT"
+                controls
+            else 
+                songs_by_album(album_name)
+                puts "\n"
+                puts "Type the name of the song you would like to add, or you can type EXIT to return to search options."
+                puts "\n"
+                song_name = gets.chomp
+                puts "\n"
+                if song_name == "EXIT"
+                    controls
+                else 
+                    search_song(song_name)
+                    puts "\n"
+                    puts "Would you like to add the top result?"
+                    puts "\n"
+                    choice2 = gets.chomp
+                    puts "\n"
+                    if choice2 == "yes" or choice2 == "add song"
+                        add_song(song_name)
+                    end
+                end  
+            end 
         elsif choice1 == "2" or choice1 == "New for You" or choice1 == "new for you" or choice1 == "New for you"
             new_for_you
         end
@@ -94,7 +140,9 @@ def controls
         if choice == "1" or choice == "Artists" or choice == "artists" # that doesnt work
             view_all_artists
         elsif choice == "2" or choice == "albums" or choice == "Albums" # also doesnt work
-            puts "under construction"
+            all_user_albums
+        elsif choice == "3" or choice == "playists" or choice == "Playlists"
+            all_user_albums
         elsif choice == "4" or choice == "songs" or choice == "Songs" 
             view_all_user_songs
         end 

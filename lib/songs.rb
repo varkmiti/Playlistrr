@@ -38,6 +38,6 @@ end
 
 def view_all_user_songs
     puts "\n"
-    puts Song.where(user_id: @session_user.id).map {|song| song.name }.uniq
+    puts @session_user.songs.map {|song| song.name }.uniq
 end 
 

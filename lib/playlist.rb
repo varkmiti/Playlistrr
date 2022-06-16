@@ -28,3 +28,8 @@ def show_songs_on_playlist
     puts "\n"
     puts Song.where(playlist_id: @session_playlist.id).map { |song| song.name }
 end
+
+def show_all_user_playlists
+    puts "\n"
+    puts @session_user.playlists
+end 

@@ -53,6 +53,6 @@ def open_album(album)
 end 
 
 def view_all_artists
-    binding.pry
-    @session_user.artists
+    puts "\n"
+    puts @session_user.artists.map { |artist| artist.name }.uniq
 end 
