@@ -16,6 +16,7 @@ def controls
     puts "2. Albums"
     puts "3. Songs" 
     puts "5. Find New Music" 
+    puts "6. View songs on playlist"
     puts "7. Change Playlist"
     puts "8. Create Party"
     puts "9. Quit Playlistrr"
@@ -35,6 +36,8 @@ def controls
         album_name = gets.chomp
         puts "\n"
         songs_by_album(album_name)
+    elsif choice == "6"
+        show_songs_on_playlist
 
     elsif choice == "Songs" or choice == "songs" or choice == "3"
         puts "What song would you like to search for?"
