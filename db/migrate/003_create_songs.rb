@@ -2,11 +2,11 @@ class CreateSongs < ActiveRecord::Migration[5.2]
   def change
     create_table :songs do |t|
       t.string :name
-      t.integer :artist_id
-      t.integer :user_id
+      t.belongs_to :artist
+      t.belongs_to :user
       t.string :ob_id
-      t.integer :playlist_id
-      t.integer :party_id
+      t.belongs_to :playlist
+      t.belongs_to :party
     end
   end
 end

@@ -1,4 +1,5 @@
 def create_party
+    puts "\n"
     puts "Let's find an existing party or create a new one! What is the name of your party?"
     puts "\n"
     name = gets.chomp
