@@ -53,5 +53,7 @@ def open_album(album)
 
 end 
 
-
-
+def view_all_artists
+    puts "\n"
+    puts User.artists.uniq
+end 

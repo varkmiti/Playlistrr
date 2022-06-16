@@ -32,7 +32,7 @@ def controls
     puts "2. Albums"
     puts "3. Songs" 
     puts "4. Find New Music" 
-    puts "5. View all songs"
+    puts "5. View all albums, artists, or songs"
     puts "6. View songs on playlist and party"
     puts "7. Change Playlist"
     puts "8. Change Party"
@@ -53,8 +53,6 @@ def controls
         album_name = gets.chomp
         puts "\n"
         songs_by_album(album_name)
-    elsif choice == "6"
-        show_songs_on_playlist
 
     elsif choice == "Songs" or choice == "songs" or choice == "3"
         puts "What song would you like to search for?"
@@ -84,8 +82,24 @@ def controls
             new_for_you
         end
 
-    elsif choice === "5" or choice == "view all songs"
-        view_all_user_songs
+    elsif choice === "5" or choice == "view all"
+        puts "\n"
+        puts "Do you want to see all artists, albums, or songs?"
+        puts "1. Artists"
+        puts "2. Albums"
+        puts "3. Songs"
+        choice = gets.chomp
+        puts "\n"
+        if choice == "1" or choice == "Artists" or choice == "artists" # that doesnt work
+            view_all_artists
+        elsif choice == "2" or choice == "albums" or choice == "Albums" # also doesnt work
+            puts "under construction"
+        elsif choice == "3" or choice == "songs" or choice == "Songs" 
+            view_all_user_songs
+        end 
+
+    elsif choice == "6"
+        show_songs_on_playlist
 
     elsif choice == "7" or choice == "Create Playlist" or choice == "create playlist" or choice1 == "Create playlist"
         playlist_control_cycle

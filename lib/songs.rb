@@ -33,6 +33,7 @@ def add_song(song_name)
 end 
 
 def view_all_user_songs
+    puts "\n"
     puts Song.where(user_id: @session_user.id).map {|song| song.name }.uniq
 end 
 

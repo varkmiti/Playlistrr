@@ -13,6 +13,7 @@ def boot_into_playlist
     puts "\n"
     puts "1. Add songs"
     puts "2. Just looking!"
+    puts "\n"
     choice = gets.chomp
     puts "\n"
     if choice == "1" or choice == "add songs" or choice == "Add songs"
