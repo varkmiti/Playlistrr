@@ -32,9 +32,9 @@ def controls
     puts "2. Albums"
     puts "3. Songs" 
     puts "5. Find New Music" 
-    puts "6. View songs on playlist"
+    puts "6. View songs on playlist and party"
     puts "7. Change Playlist"
-    puts "8. Create Party"
+    puts "8. Change Party"
     puts "9. Quit Playlistrr"
     puts "\n"
     choice = gets.chomp

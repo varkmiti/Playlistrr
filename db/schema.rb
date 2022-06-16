@@ -32,10 +32,10 @@ ActiveRecord::Schema.define(version: 6) do
   create_table "songs", force: :cascade do |t|
     t.string "name"
     t.string "artist_id"
-    t.string "genre_id"
     t.integer "user_id"
     t.string "ob_id"
-    t.string "playist_id"
+    t.string "playlist_id"
+    t.integer "party_id"
   end
 
   create_table "users", force: :cascade do |t|

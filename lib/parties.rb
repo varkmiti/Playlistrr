@@ -6,4 +6,10 @@ def create_party
     puts "\n"
     puts "Awesome! Have fun adding songs to your party!"
 end 
-    
+
+def view_songs_in_party
+    puts "\n"
+    puts Song.where(playlist_id: @session_party.id).map { |song| song.name }
+end 
+
+

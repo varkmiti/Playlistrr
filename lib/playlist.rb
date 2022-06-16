@@ -22,3 +22,8 @@ def boot_into_playlist
         puts "\n"
     end 
 end 
+
+def show_songs_on_playlist
+    puts "\n"
+    puts Song.where(playlist_id: @session_playlist.id).map { |song| song.name }
+end 
