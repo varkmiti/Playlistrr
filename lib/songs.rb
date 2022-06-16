@@ -3,15 +3,36 @@ def search_song(song_name)
 end
 
 def add_song(song_name)
-    Song.find_or_create_by(
-        name: song_name, user_id: @session_user.id, 
-        ob_id: RSpotify::Track.search("#{song_name}")[0].id,
-        artist_id: RSpotify::Track.search("#{song_name}")[0].artists[0].id, 
-        playlist_id: @session_playlist.id, 
-        party_id: @session_party.id)
+    if @session_party == nil
+        puts "Would you like to join a party first?"
+        puts "\n"
+        choice = gets.chomp
+        if choice == "no"
+            Song.find_or_create_by(
+                name: song_name, user_id: @session_user.id, 
+                ob_id: RSpotify::Track.search("#{song_name}")[0].id,
+                artist_id: RSpotify::Track.search("#{song_name}")[0].artists[0].id, 
+                playlist_id: @session_playlist.id)
+        elsif choice == "yes"
+            create_party
+            Song.find_or_create_by(
+                name: song_name, user_id: @session_user.id, 
+                ob_id: RSpotify::Track.search("#{song_name}")[0].id,
+                artist_id: RSpotify::Track.search("#{song_name}")[0].artists[0].id, 
+                playlist_id: @session_playlist.id, 
+                party_id: @session_party.id)
+        end 
+    elsif @session_party != nil 
+        Song.find_or_create_by(
+                name: song_name, user_id: @session_user.id, 
+                ob_id: RSpotify::Track.search("#{song_name}")[0].id,
+                artist_id: RSpotify::Track.search("#{song_name}")[0].artists[0].id, 
+                playlist_id: @session_playlist.id, 
+                party_id: @session_party.id)
+    end 
 end 
 
 def view_all_user_songs
-    puts Song.where(user_id: @session_user.id).map {|song| song.name } 
+    puts Song.where(user_id: @session_user.id).map {|song| song.name }.uniq
 end 
 
