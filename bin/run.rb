@@ -16,7 +16,7 @@ def controls
     puts "2. Albums"
     puts "3. Songs" 
     puts "5. Find New Music" 
-    puts "7. Create Playlist"
+    puts "7. Change Playlist"
     puts "8. Create Party"
     puts "9. Quit Playlistrr"
     puts "\n"
@@ -65,7 +65,7 @@ def controls
         end
 
     elsif choice == "7" or choice == "Create Playlist" or choice == "create playlist" or choice1 == "Create playlist"
-        create_playlist
+        playlist_control_cycle
 
     elsif choice == "8" or choice == "Create party" or choice == "Create Party" or choice == "create party"
         puts "yeah i'm working on it"
@@ -77,14 +77,16 @@ def controls
         select 
     end 
      
+    return_home
+end 
+
+def return_home 
     puts "\n"
     puts "Would you like to search for something else?"
     puts "1. Yes"
     puts "2. No"
     puts "\n"
-
     return_or_exit = gets.chomp
-
     if return_or_exit == "1" or return_or_exit == "yes" or return_or_exit == "Yes"
         controls
     elsif return_or_exit == "2" or return_or_exit == "no" or return_or_exit == "No"
@@ -92,6 +94,10 @@ def controls
     end 
 end 
 
+def playlist_control_cycle
+    boot_into_playlist
+    controls
+end
 
 sign_in
-controls
+playlist_control_cycle

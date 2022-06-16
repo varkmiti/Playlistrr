@@ -18,4 +18,40 @@ def album_search_by_artist_name(artist_name) # Need to switch order of request a
         art_name = RSpotify::Artist.search("#{artist_name}").filter { |art| art.popularity == most_pop }[0].name
         puts RSpotify::Artist.search("#{art_name}")[0].albums.map { |alb| alb.name }.uniq
     end 
+
+    puts "\n"
+    puts "Would you like to see the songs one of these albums?"
+    puts "\n"
+    album = gets.chomp
+    puts "\n"
+    open_album(album)
 end 
+
+
+def open_album(album)
+    puts RSpotify::Album.search("#{album}")[0].tracks.map { |alb| alb.name }.uniq
+    puts "\n"
+    puts "What song do you want to add to your playlist? If none, type 'none of these.'"
+    puts "\n"
+    choice = gets.chomp
+    puts "\n"
+    if choice == "none of these"
+        return_home
+    else 
+        add_song(choice)
+        puts "\n"
+        puts "I love that song! Do you want to add another?"
+        puts "\n"
+        choice1 = gets.chomp
+        puts "\n"
+        if choice1 == "yes" or choice1 == "Yes" or choice1 == "y" or choice1 == "Y"
+            open_album(album)
+        else 
+            return_home
+        end 
+    end 
+
+end 
+
+
+
