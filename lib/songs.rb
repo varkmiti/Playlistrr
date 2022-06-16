@@ -11,3 +11,7 @@ def add_song(song_name)
         party_id: @session_party.id)
 end 
 
+def view_all_user_songs
+    puts Song.where(user_id: @session_user.id).map {|song| song.name } 
+end 
+

@@ -31,7 +31,8 @@ def controls
     puts "1. Artists"
     puts "2. Albums"
     puts "3. Songs" 
-    puts "5. Find New Music" 
+    puts "4. Find New Music" 
+    puts "5. View all songs"
     puts "6. View songs on playlist and party"
     puts "7. Change Playlist"
     puts "8. Change Party"
@@ -70,7 +71,7 @@ def controls
             add_song(song_name)
         end 
 
-    elsif choice == "new music" or choice == "Find new" or choice == "5" or choice == "Find New Music" or choice == "Find new music" or choice == "find new music"
+    elsif choice == "new music" or choice == "Find new" or choice == "4" or choice == "Find New Music" or choice == "Find new music" or choice == "find new music"
         puts "What would you like to see?"
         puts "1. New Albums"
         puts "2. New for You "
@@ -82,6 +83,9 @@ def controls
         elsif choice1 == "2" or choice1 == "New for You" or choice1 == "new for you" or choice1 == "New for you"
             new_for_you
         end
+
+    elsif choice === "5" or choice == "view all songs"
+        view_all_user_songs
 
     elsif choice == "7" or choice == "Create Playlist" or choice == "create playlist" or choice1 == "Create playlist"
         playlist_control_cycle
