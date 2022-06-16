@@ -106,23 +106,6 @@ def controls
             else 
                 songs_by_album(album_name)
                 puts "\n"
-                puts "Type the name of the song you would like to add, or you can type EXIT to return to search options."
-                puts "\n"
-                song_name = gets.chomp
-                puts "\n"
-                if song_name == "EXIT"
-                    controls
-                else 
-                    search_song(song_name)
-                    puts "\n"
-                    puts "Would you like to add the top result?"
-                    puts "\n"
-                    choice2 = gets.chomp
-                    puts "\n"
-                    if choice2 == "yes" or choice2 == "add song"
-                        add_song(song_name)
-                    end
-                end  
             end 
         elsif choice1 == "2" or choice1 == "New for You" or choice1 == "new for you" or choice1 == "New for you"
             new_for_you
