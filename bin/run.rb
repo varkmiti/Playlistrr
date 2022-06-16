@@ -9,6 +9,22 @@ def terminate
     exit(true)
 end 
 
+def return_home 
+    puts "\n"
+    puts "Would you like to search for something else?"
+    puts "1. Yes"
+    puts "2. No"
+    puts "\n"
+    return_or_exit = gets.chomp
+    if return_or_exit == "1" or return_or_exit == "yes" or return_or_exit == "Yes"
+        controls
+    elsif return_or_exit == "2" or return_or_exit == "no" or return_or_exit == "No"
+        terminate
+    end 
+end
+
+
+
 def controls
     puts "\n"
     puts "What would you like to search for, #{@session_user.name}?"
@@ -71,7 +87,7 @@ def controls
         playlist_control_cycle
 
     elsif choice == "8" or choice == "Create party" or choice == "Create Party" or choice == "create party"
-        puts "yeah i'm working on it"
+        create_party
     
     elsif choice == "9" or choice == "Quit" or choice == "quit"
         terminate
@@ -83,19 +99,7 @@ def controls
     return_home
 end 
 
-def return_home 
-    puts "\n"
-    puts "Would you like to search for something else?"
-    puts "1. Yes"
-    puts "2. No"
-    puts "\n"
-    return_or_exit = gets.chomp
-    if return_or_exit == "1" or return_or_exit == "yes" or return_or_exit == "Yes"
-        controls
-    elsif return_or_exit == "2" or return_or_exit == "no" or return_or_exit == "No"
-        terminate
-    end 
-end 
+
 
 def playlist_control_cycle
     boot_into_playlist
