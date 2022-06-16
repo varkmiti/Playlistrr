@@ -20,11 +20,15 @@ def album_search_by_artist_name(artist_name) # Need to switch order of request a
     end 
 
     puts "\n"
-    puts "Would you like to see the songs one of these albums?"
+    puts "What album would you like to open? If you want to return to the control page, type EXIT."
     puts "\n"
     album = gets.chomp
     puts "\n"
-    open_album(album)
+    if album == "EXIT"
+        controls
+    else 
+        open_album(album)
+    end 
 end 
 
 
@@ -52,7 +56,7 @@ def open_album(album)
     end 
 end 
 
-def view_all_artists
+def view_all_artists #problem
     puts "\n"
     puts @session_user.artists.map { |artist| artist.name }.uniq
 end 

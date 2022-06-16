@@ -130,7 +130,7 @@ def controls
             view_all_user_songs
         end 
 
-    elsif choice == "6"
+    elsif choice == "6" # not built out
         show_songs_on_playlist
 
     elsif choice == "7" or choice == "Create Playlist" or choice == "create playlist" or choice1 == "Create playlist"

@@ -15,6 +15,7 @@ def sign_in
         puts "\n"
         puts "Howdy #{choice1}, welcome to Playlistrr!"
     elsif choice == "2" or choice == "Spotify" or choice == "spotify" or choice == "via Spotify"
-        puts "under construction"
+        puts "Under construction! Returning you to the sign in page... =>" 
+        sign_in
     end 
 end 
