@@ -50,10 +50,9 @@ def open_album(album)
             return_home
         end 
     end 
-
 end 
 
 def view_all_artists
-    puts "\n"
-    puts User.artists.uniq
+    binding.pry
+    @session_user.artists
 end 

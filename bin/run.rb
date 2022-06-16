@@ -87,14 +87,15 @@ def controls
         puts "Do you want to see all artists, albums, or songs?"
         puts "1. Artists"
         puts "2. Albums"
-        puts "3. Songs"
+        puts "3. Playlists"
+        puts "4. Songs"
         choice = gets.chomp
         puts "\n"
         if choice == "1" or choice == "Artists" or choice == "artists" # that doesnt work
             view_all_artists
         elsif choice == "2" or choice == "albums" or choice == "Albums" # also doesnt work
             puts "under construction"
-        elsif choice == "3" or choice == "songs" or choice == "Songs" 
+        elsif choice == "4" or choice == "songs" or choice == "Songs" 
             view_all_user_songs
         end 
 

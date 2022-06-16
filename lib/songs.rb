@@ -13,6 +13,8 @@ def add_song(song_name)
                 ob_id: RSpotify::Track.search("#{song_name}")[0].id,
                 artist_id: RSpotify::Track.search("#{song_name}")[0].artists[0].id, 
                 playlist_id: @session_playlist.id)
+            Artist.find_or_create_by(art_id: RSpotify::Track.search("#{song_name}")[0].artists[0].id, 
+            name: RSpotify::Track.search("#{song_name}")[0].artists[0].name)
         elsif choice == "yes"
             create_party
             Song.find_or_create_by(
@@ -21,6 +23,8 @@ def add_song(song_name)
                 artist_id: RSpotify::Track.search("#{song_name}")[0].artists[0].id, 
                 playlist_id: @session_playlist.id, 
                 party_id: @session_party.id)
+            Artist.find_or_create_by(id: RSpotify::Track.search("#{song_name}")[0].artists[0].id, 
+                name: RSpotify::Track.search("#{song_name}")[0].artists[0].name)
         end 
     elsif @session_party != nil 
         Song.find_or_create_by(

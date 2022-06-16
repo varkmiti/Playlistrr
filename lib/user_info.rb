@@ -18,8 +18,3 @@ def sign_in
         puts "under construction"
     end 
 end 
-
-# def create_new_user(name)
-#     User.create(name: name)
-#     puts User.all
-# end 
