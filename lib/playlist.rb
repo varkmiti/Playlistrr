@@ -5,7 +5,7 @@ def create_playlist
     @session_playlist = Playlist.find_or_create_by(name: name)
  
     puts "\n"
-    puts "Awesome! Have fun adding songs to #{@session_playlist.name}"
+    puts "Awesome! Have fun adding songs to #{@session_playlist.name}!"
 end 
 
 def boot_into_playlist

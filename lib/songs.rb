@@ -8,32 +8,36 @@ def add_song(song_name)
         puts "\n"
         choice = gets.chomp
         if choice == "no"
+            artist_create_helper(song_name)
             Song.find_or_create_by(
-                name: song_name, user_id: @session_user.id, 
+                name: RSpotify::Track.search("#{song_name}")[0].name, user_id: @session_user.id, 
                 ob_id: RSpotify::Track.search("#{song_name}")[0].id,
-                artist_id: RSpotify::Track.search("#{song_name}")[0].artists[0].id, 
+                artist_id: Artist.find_or_create_by(art_id: RSpotify::Track.search("#{song_name}")[0].artists[0].id).id, 
                 playlist_id: @session_playlist.id)
-            Artist.find_or_create_by(art_id: RSpotify::Track.search("#{song_name}")[0].artists[0].id, 
-            name: RSpotify::Track.search("#{song_name}")[0].artists[0].name)
         elsif choice == "yes"
             create_party
+            artist_create_helper(song_name)
             Song.find_or_create_by(
-                name: song_name, user_id: @session_user.id, 
+                name: RSpotify::Track.search("#{song_name}")[0].name, user_id: @session_user.id, 
                 ob_id: RSpotify::Track.search("#{song_name}")[0].id,
-                artist_id: RSpotify::Track.search("#{song_name}")[0].artists[0].id, 
+                artist_id: Artist.find_or_create_by(art_id: RSpotify::Track.search("#{song_name}")[0].artists[0].id).id, 
                 playlist_id: @session_playlist.id, 
                 party_id: @session_party.id)
-            Artist.find_or_create_by(id: RSpotify::Track.search("#{song_name}")[0].artists[0].id, 
-                name: RSpotify::Track.search("#{song_name}")[0].artists[0].name)
         end 
     elsif @session_party != nil 
+        artist_create_helper(song_name)
         Song.find_or_create_by(
-                name: song_name, user_id: @session_user.id, 
-                ob_id: RSpotify::Track.search("#{song_name}")[0].id,
-                artist_id: RSpotify::Track.search("#{song_name}")[0].artists[0].id, 
-                playlist_id: @session_playlist.id, 
-                party_id: @session_party.id)
+            name: RSpotify::Track.search("#{song_name}")[0].name, user_id: @session_user.id, 
+            ob_id: RSpotify::Track.search("#{song_name}")[0].id,
+            artist_id: RSpotify::Track.search("#{song_name}")[0].artists[0].id, 
+            playlist_id: @session_playlist.id, 
+            party_id: @session_party.id)
     end 
+end 
+
+def artist_create_helper(song_name)
+    Artist.find_or_create_by(art_id: RSpotify::Track.search("#{song_name}")[0].artists[0].id, 
+    name: RSpotify::Track.search("#{song_name}")[0].artists[0].name)
 end 
 
 def view_all_user_songs
