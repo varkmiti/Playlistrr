@@ -75,7 +75,7 @@ end
 
 def view_all_user_songs
     puts "\n"
-    puts User.find(@session_user.id).songs.map { |track| [track.name, Artist.find(track.artist_id).name].join(" | ") }
+    puts User.find(@session_user.id).songs.map { |track| [track.name, Artist.find(track.artist_id).name].join(" | ") }.uniq
 end 
 def destroy_song(song_name)
     puts "How would you like to delete a song?"
