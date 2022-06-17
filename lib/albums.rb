@@ -20,5 +20,6 @@ end
 def all_user_albums
     puts "\n"
     array = @session_user.songs.map { |song| song.ob_id }.uniq.to_a
-    
+    puts array.map {|song| RSpotify::Track.find("#{song}") }.map {|song_obj| song_obj.album }.map { |album| album.name }
+
 end 
