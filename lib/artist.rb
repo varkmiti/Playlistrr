@@ -27,8 +27,26 @@ def album_search_by_artist_name(artist_name) # Need to switch order of request a
     if album == "EXIT"
         controls
     else 
-        open_album(album)
-    end 
+        songs_by_album(album)
+        puts "\n"
+        puts "Type the name of the song you would like to add, or you can type EXIT to return to search options."
+        puts "\n"
+        song_name = gets.chomp
+        puts "\n"
+        if song_name == "EXIT"
+            controls
+        else 
+            search_song(song_name)
+            puts "\n"
+            puts "What number song would you like to add?"
+            puts "\n"
+            choice2 = gets.chomp
+            puts "\n"
+            if choice2 == "1" or choice2 == "2" or choice2 == "3"  or choice2 == "4"  or choice2 == "5"  or choice2 == "6"  or choice2 == "7"  or choice2 == "8"  or choice2 == "9"  or choice2 == "10"
+                song_by_id(song_name, choice2)
+            end 
+        end
+    end  
 end 
 
 

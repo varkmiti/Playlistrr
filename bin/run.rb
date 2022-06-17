@@ -49,7 +49,7 @@ def controls
         puts "\n"
         album_search_by_artist_name(artist_name)
 
-    elsif choice == "Albums" or choice == "ablums" or choice == "2"
+    elsif choice == "Albums" or choice == "albums" or choice == "2"
         puts "What album would you like to search for?"
         puts "\n"
         album_name = gets.chomp
@@ -65,12 +65,12 @@ def controls
         else 
             search_song(song_name)
             puts "\n"
-            puts "Would you like to add the top result?"
+            puts "What number song would you like to add?"
             puts "\n"
             choice2 = gets.chomp
             puts "\n"
-            if choice2 == "yes" or choice2 == "add song"
-                add_song(song_name)
+            if choice2 == "1" or choice2 == "2" or choice2 == "3"  or choice2 == "4"  or choice2 == "5"  or choice2 == "6"  or choice2 == "7"  or choice2 == "8"  or choice2 == "9"  or choice2 == "10"
+                song_by_id(song_name, choice2)
             end 
         end 
 
