@@ -42,7 +42,7 @@ end
 
 def view_all_user_songs
     puts "\n"
-    puts @session_user.songs.map {|song| song.name }.uniq
+    puts User.find(@session_user.id).songs.map { |song| song.name }.uniq
 end 
 
 def destroy_song(song_name)

@@ -58,5 +58,5 @@ end
 
 def view_all_artists 
     puts "\n"
-    puts @session_user.artists.map { |artist| artist.name }.uniq
+    puts User.find(@session_user.id).artists.map { |artist| artist.name }.uniq
 end 
