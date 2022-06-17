@@ -17,3 +17,5 @@ def view_user_parties
     puts @session_user.parties.map { |parties| parties.name }.uniq
 end 
 
+def update_party
+end 

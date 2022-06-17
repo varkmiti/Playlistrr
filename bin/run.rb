@@ -34,10 +34,11 @@ def controls
     puts "4. Find New Music" 
     puts "5. View all user's albums, artists, or songs"
     puts "6. View songs on playlist and party"
-    puts "7. Delete Objects"
-    puts "8. Change Playlist"
-    puts "9. Change Party"
-    puts "10. Quit Playlistrr"
+    puts "7. Update Playlists or Parties"
+    puts "8. Delete Objects"
+    puts "9. Change Playlist"
+    puts "10. Change Party"
+    puts "11. Quit Playlistrr"
     puts "\n"
     choice = gets.chomp
     puts "\n"
@@ -135,7 +136,7 @@ def controls
         end 
 
     elsif choice == "6" # not built out
-        puts "Do you want to see the songs in playlsit '#{@session_playlist.name}' or in your party?"
+        puts "Do you want to see the songs in playlist '#{@session_playlist.name}' or in your party?"
         puts "\n"
         choice = gets.chomp
         puts "\n"
@@ -144,7 +145,21 @@ def controls
         elsif choice == "party" or choice == "#{@session_party}"
             view_songs_in_party
         end
-    elsif choice == "7" or choice == "Delete" or choice == "delete"
+
+    elsif choice == "7" or choice == "Update" or choice == "update"
+        puts "\n"
+        puts "What would you like to update?" 
+        puts "1. Playlist" 
+        puts "2. Party"
+        puts "\n"
+        choice4 = gets.chomp
+        puts "\n"
+        if choice4 == "playlist" or choice4 == "1" or choice4 == "Playlist"
+            update_playlist
+        elsif choice4 == "party" or choice4 == "Party" or choice4 == "2"
+            update_party
+        end 
+    elsif choice == "8" or choice == "Delete" or choice == "delete"
         puts "\n"
         puts "What would you like to delete?"
         puts "1. Song"
@@ -158,7 +173,7 @@ def controls
             song_name = gets.chomp
             puts "\n"
             destroy_song(song_name)
-        elsif choice == "2" or choice == "Playlsit" or choice == "playlist"
+        elsif choice == "2" or choice == "Playlist" or choice == "playlist"
             puts "What playlist?"
             puts "\n"
             playlist_name = gets.chomp
@@ -166,13 +181,13 @@ def controls
             destroy_playlist(playlist_name)
         end 
 
-    elsif choice == "8" or choice == "change Playlist" or choice == "Change playlist" or choice1 == "change playlist"
+    elsif choice == "9" or choice == "change Playlist" or choice == "Change playlist" or choice1 == "change playlist"
         playlist_control_cycle
 
-    elsif choice == "9" or choice == "Change party" or choice == "Change Party" or choice == "change party"
+    elsif choice == "10" or choice == "Change party" or choice == "Change Party" or choice == "change party"
         create_party
     
-    elsif choice == "10" or choice == "Quit" or choice == "quit"
+    elsif choice == "11" or choice == "Quit" or choice == "quit"
         terminate
     else 
         puts "Sorry, looks like we can't find #{choice} for you. Let's try a different search:"

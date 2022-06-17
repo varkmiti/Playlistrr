@@ -40,3 +40,16 @@ def destroy_playlist(playlist_name)
     Song.where(playlist_id: playlist_id).destroy_all
     puts "Gone!"
 end 
+
+def update_playlist
+    puts "What song would you like to move to a different playlist?"
+    puts "\n"
+    song_name = gets.chomp
+    puts "\n"
+    puts "What playlist would you like to move #{song_name} to?"
+    puts "\n"
+    playlist_name = gets.chomp
+    puts "\n"
+    song = Song.where(name: song_name, playlist_id: @session_playlist.id, user_id: @session_user.id)
+    song[0].update(playlist_id: Playlist.where(name: playlist_name).ids[0])
+end 
