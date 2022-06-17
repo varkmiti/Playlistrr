@@ -123,9 +123,9 @@ def controls
         puts "5. Songs"
         choice = gets.chomp
         puts "\n"
-        if choice == "1" or choice == "Artists" or choice == "artists" # that doesnt work
+        if choice == "1" or choice == "Artists" or choice == "artists" 
             view_all_artists
-        elsif choice == "2" or choice == "albums" or choice == "Albums" # also doesnt work
+        elsif choice == "2" or choice == "albums" or choice == "Albums" 
             all_user_albums
         elsif choice == "3" or choice == "playists" or choice == "Playlists"
             show_all_user_playlists
@@ -135,7 +135,7 @@ def controls
             view_all_user_songs
         end 
 
-    elsif choice == "6" # not built out
+    elsif choice == "6" 
         puts "Do you want to see the songs in playlist '#{@session_playlist.name}' or in your party?"
         puts "\n"
         choice = gets.chomp
