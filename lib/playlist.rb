@@ -2,8 +2,11 @@ def create_playlist
     puts "Let's find an existing playlist or create a new one! What is the name of your playlist?"
     puts "\n"
     name = gets.chomp
-    @session_playlist = Playlist.find_or_create_by(name: name)
- 
+    puts "On Playlistrr, playlists are private! What's password for #{name}?"
+    puts "\n"
+    password = gets.chomp
+    puts "\n"
+    @session_playlist = Playlist.find_or_create_by(name: name, password: password)
     puts "\n"
     puts "Awesome! Have fun adding songs to #{@session_playlist.name}!"
 end 
