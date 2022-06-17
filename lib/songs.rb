@@ -47,17 +47,17 @@ end
 
 def destroy_song(song_name)
     puts "How would you like to delete a song?"
-    puts "1. Delete song from current playlist ("
+    puts "1. Delete song from current playlist #{@session_playlist.name}"
     puts "2. Delete song from all user objects"
     puts "3. Back"
     puts "\n"
     choice3 = gets.chomp
     puts "\n"
     if choice3 == "1" or choice3 == "delete song from a playlist"
-        Song.where(name: song_name, playlist_id: @session_playlist.id, user_id: @session_user.id).destroy_all
+        Song.where(name: RSpotify::Track.search(song_name)[0].name, playlist_id: @session_playlist.id, user_id: @session_user.id).destroy_all
         puts "Gone!"
     elsif choice3 == "2" or choice3 == "delete song from all user objects"
-        Song.where(name: song_name, user_id: @session_user.id).destroy_all
+        Song.where(name: RSpotify::Track.search(song_name)[0].name, user_id: @session_user.id).destroy_all
         puts "Gone!"
     elsif choice3 == "3" or choice3 == "Back" or choice3 == "back"
         controls

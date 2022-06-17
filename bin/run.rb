@@ -27,7 +27,7 @@ end
 
 def controls
     puts "\n"
-    puts "What would you like to search for, #{@session_user.name}?"
+    puts "What would you like to search for, #{@session_user.name}? | Current Playlist: #{ if @session_playlist == nil then "" else @session_playlist.name end } | Current Party: #{if @session_party == nil then " " else @session_party.name end }"
     puts "1. Artists"
     puts "2. Albums"
     puts "3. Songs" 
