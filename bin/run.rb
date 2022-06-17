@@ -32,7 +32,7 @@ def controls
     puts "2. Albums"
     puts "3. Songs" 
     puts "4. Find New Music" 
-    puts "5. View all albums, artists, or songs"
+    puts "5. View all user's albums, artists, or songs"
     puts "6. View songs on playlist and party"
     puts "7. Change Playlist"
     puts "8. Change Party"
@@ -113,11 +113,12 @@ def controls
 
     elsif choice === "5" or choice == "view all"
         puts "\n"
-        puts "Do you want to see all artists, albums, or songs?"
+        puts "Do you want to see all user's artists, albums, or songs?"
         puts "1. Artists"
         puts "2. Albums"
         puts "3. Playlists"
-        puts "4. Songs"
+        puts "4. Parties"
+        puts "5. Songs"
         choice = gets.chomp
         puts "\n"
         if choice == "1" or choice == "Artists" or choice == "artists" # that doesnt work
@@ -126,12 +127,22 @@ def controls
             all_user_albums
         elsif choice == "3" or choice == "playists" or choice == "Playlists"
             show_all_user_playlists
-        elsif choice == "4" or choice == "songs" or choice == "Songs" 
+        elsif choice == "4" or choice == "parties" or "choice" == "Parties"
+            view_user_parties
+        elsif choice == "5" or choice == "songs" or choice == "Songs" 
             view_all_user_songs
         end 
 
     elsif choice == "6" # not built out
-        show_songs_on_playlist
+        puts "Do you want to see the songs in playlsit '#{@session_playlist.name}' or in your party?"
+        puts "\n"
+        choice = gets.chomp
+        puts "\n"
+        if choice == "playlist" or choice == "#{@session_playlist.name}"
+            show_songs_on_playlist
+        elsif choice == "party" or choice == "#{@session_party}"
+            view_songs_in_party
+        end
 
     elsif choice == "7" or choice == "Create Playlist" or choice == "create playlist" or choice1 == "Create playlist"
         playlist_control_cycle

@@ -13,4 +13,7 @@ def view_songs_in_party
     puts Song.where(playlist_id: @session_party.id).map { |song| song.name }
 end 
 
+def view_user_parties
+    puts @session_user.parties.map { |parties| parties.name }.uniq
+end 
 
