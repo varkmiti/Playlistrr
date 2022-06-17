@@ -81,12 +81,12 @@ def controls
         puts "\n"
         search_song(song_name)
         puts "\n"
-        puts "Would you like to add the top result?"
+        puts "What number would you like to add?"
         puts "\n"
-        choice2 = gets.chomp
+        index = gets.chomp
         puts "\n"
-        if choice2 == "yes" or choice2 == "add song"
-            add_song(song_name)
+        if index == "1" or index == "2" or index == "3" or index == "4" or index == "5" or index == "6" or index == "7" or index == "8" or index == "9"or index == "10"
+            song_by_id(song_name, index)
         end 
 
     elsif choice == "new music" or choice == "Find new" or choice == "4" or choice == "Find New Music" or choice == "Find new music" or choice == "find new music"
