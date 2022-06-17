@@ -32,5 +32,5 @@ end
 def show_all_user_playlists
     puts "\n"
     binding.pry
-    puts @session_user.playlists
+    puts @session_user.playlists.map {|playlist| playlist.name }
 end 
