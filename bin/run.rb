@@ -125,7 +125,7 @@ def controls
         elsif choice == "2" or choice == "albums" or choice == "Albums" # also doesnt work
             all_user_albums
         elsif choice == "3" or choice == "playists" or choice == "Playlists"
-            all_user_albums
+            show_all_user_playlists
         elsif choice == "4" or choice == "songs" or choice == "Songs" 
             view_all_user_songs
         end 

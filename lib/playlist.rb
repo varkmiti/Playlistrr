@@ -31,5 +31,6 @@ end
 
 def show_all_user_playlists
     puts "\n"
+    binding.pry
     puts @session_user.playlists
 end 
