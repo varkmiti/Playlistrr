@@ -34,9 +34,10 @@ def controls
     puts "4. Find New Music" 
     puts "5. View all user's albums, artists, or songs"
     puts "6. View songs on playlist and party"
-    puts "7. Change Playlist"
-    puts "8. Change Party"
-    puts "9. Quit Playlistrr"
+    puts "7. Delete Objects"
+    puts "8. Change Playlist"
+    puts "9. Change Party"
+    puts "10. Quit Playlistrr"
     puts "\n"
     choice = gets.chomp
     puts "\n"
@@ -143,14 +144,35 @@ def controls
         elsif choice == "party" or choice == "#{@session_party}"
             view_songs_in_party
         end
+    elsif choice == "7" or choice == "Delete" or choice == "delete"
+        puts "\n"
+        puts "What would you like to delete?"
+        puts "1. Song"
+        puts "2. Playlist"
+        puts "\n"
+        choice = gets.chomp 
+        puts "\n"
+        if choice == "1" or choice == "song" or choice == "Song"
+            puts "What song?"
+            puts "\n"
+            song_name = gets.chomp
+            puts "\n"
+            destroy_song(song_name)
+        elsif choice == "2" or choice == "Playlsit" or choice == "playlist"
+            puts "What playlist?"
+            puts "\n"
+            playlist_name = gets.chomp
+            puts "\n"
+            destroy_playlist(playlist_name)
+        end 
 
-    elsif choice == "7" or choice == "Create Playlist" or choice == "create playlist" or choice1 == "Create playlist"
+    elsif choice == "8" or choice == "change Playlist" or choice == "Change playlist" or choice1 == "change playlist"
         playlist_control_cycle
 
-    elsif choice == "8" or choice == "Create party" or choice == "Create Party" or choice == "create party"
+    elsif choice == "9" or choice == "Change party" or choice == "Change Party" or choice == "change party"
         create_party
     
-    elsif choice == "9" or choice == "Quit" or choice == "quit"
+    elsif choice == "10" or choice == "Quit" or choice == "quit"
         terminate
     else 
         puts "Sorry, looks like we can't find #{choice} for you. Let's try a different search:"

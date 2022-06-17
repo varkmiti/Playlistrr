@@ -6,3 +6,5 @@ require_all 'lib'
 require_all 'app'
 require_relative 'omniauth.rb'
 require_relative 'routes.rb'
+
+ActiveRecord::Base.logger = nil

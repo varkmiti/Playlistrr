@@ -58,6 +58,5 @@ end
 
 def view_all_artists 
     puts "\n"
-    binding.pry
     puts @session_user.artists.map { |artist| artist.name }.uniq
 end 

@@ -33,3 +33,10 @@ def show_all_user_playlists
     puts "\n"
     puts @session_user.playlists.map {|playlist| playlist.name }.uniq
 end 
+
+def destroy_playlist(playlist_name)
+    playlist_id = Playlist.where(name: playlist_name).ids
+    Playlist.where(name: playlist_name).destroy_all
+    Song.where(playlist_id: playlist_id).destroy_all
+    puts "Gone!"
+end 
